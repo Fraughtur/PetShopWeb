@@ -1,0 +1,390 @@
+.row.fundacion {
+    text-align: center;
+    background-color: rgb(119, 212, 255);
+    color: white;
+    padding-left: 10%;
+}
+
+.badge.text-wrap{
+    color: black;
+}
+.badge.fs-4{
+    color:rgb(73, 197, 255);
+}
+.tittlecategory{
+    color:rgb(73, 197, 255);
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+.txtprimerabarra{
+    color: white;
+}
+
+.txtprimerabarra:hover{
+    color: black;
+}
+
+.card-body{
+    margin-top: 8%;
+}
+
+.btn.rounded{
+    background-color: rgb(200, 202, 202);
+}
+
+
+.btn.btn-secundary.fw-bold{
+    background-color: rgb(204, 204, 204);
+}
+
+.btn.btn-secundary{
+    background-color: rgb(204, 204, 204);
+    color: white;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif; 
+    
+}
+.btn.btn.btn-secundary:hover{
+    background-color:rgb(73, 197, 255);
+}
+
+.container{
+    background-color: rgb(73, 197, 255);
+}
+.container-fluid{
+    background: rgb(255, 255, 255);
+}
+.navbar231{
+    background-color: rgb(255, 255, 255);
+}
+
+.row.rownavbar{
+    background-color: rgb(255, 255, 255);
+}
+.customscolor{
+    background-color: rgb(73, 197, 255);
+}
+
+
+.container-fluid.containernavbar{
+    background-color:rgb(255, 255, 255);
+}
+
+.row.containeradress{
+    
+    background-color: white;
+}
+
+.carousel-inner  {
+    width:100%;
+    height:100%;
+  }
+ 
+.carousel.slide{
+   
+    width:100%;
+    height:100%;
+}
+
+.card-body.border.border-dark{
+ padding-right: 19%;
+}
+
+.badge.text-wrap {
+    color: rgb(0, 0, 0);
+}
+.carousel.item.active {
+    width:100%;
+    height:100%;
+}
+.w-100 {
+    width: 100% ;
+    height: 55vh;
+  }
+  .tiendalocation{
+    margin-left: 2%;
+}
+
+  .designcolorcardtittle{
+      color: rgb(9, 90, 128);
+  }
+
+  .designcolorcard{
+    color:  rgb(73, 197, 255);
+  }
+
+ .previuvfooter{
+     color: white;
+ }
+ 
+
+.btn.rounded-bottom{
+    background-color: rgb(204, 204, 204);
+
+}
+
+
+.logocompany{
+    margin-left: 4%;
+}
+.labelregisterorder{
+   margin-left: 2%;
+}
+
+.tittlenameregister{
+    color: black;
+}
+
+.previuvfooter{
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    background-color: white;
+}
+
+.footerimage{
+    margin-left: 4%;
+}
+.logocompany{
+    margin-left: 4%;
+}
+
+.footercontainer{
+    background-color: white;
+}
+
+.nav-link.navitemfooter{
+    color: rgb(73, 197, 255);
+    background: rgb(255, 255, 255);
+}
+
+.consultcolor{
+    color: #7A7A00;
+    font-size: 13px;
+}
+
+.consultcolor2{
+    color: black;
+    font-size: 13px;
+}
+
+.consultcolor3{
+    color: rgb(73, 197, 255);
+    font-size: 13px;
+}
+
+.regisprom{
+  
+    margin-left: 4%;
+    font-size:18px;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.regispromtittle{
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.txtquienessomos{
+    
+    margin-left: 20%;
+    font-size: 36px;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.txtinfoquienessomos{
+    
+    margin-left: 20%;
+    font-size: 16px;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.customscolorfooter{
+    background-color: rgb(255, 255, 255);
+    color: rgb(73, 197, 255);
+}
+
+.cardimagepromandtext{
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    margin-left: 3%;
+}
+
+.w-100v2{
+    width:  100%;
+    height: 20vh;
+    padding: 5%;
+}
+
+.CategoriasDestacadas{
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    color: rgb(73, 197, 255);
+}
+
+.btncategorydesign{
+ margin-left: 20%;
+ font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+label h1 h2 h3 h4 h5 h6 p{
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.btncategorytext{
+    color:rgb(73, 197, 255);
+    font-size: 23px;
+
+}
+
+.btncategorytext2{
+    color: #000000;
+ 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    font-size: 13px;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.btncategorytext3{
+    color:rgb(35, 147, 199);
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.btncategorytext4{
+    color: #000000;
+    font-size: 13px;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.btncategorytext5{
+    font-size: 13px;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.btncategorytext6{
+    color: #d40000;
+    font-size: 13px;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+   
+}
+.btn.btn.btn-secundary.btnmoreinfo{
+    padding: 3%;
+    text-align: center
+    ;
+}
+.nav-item.imagepadding{
+    padding-left: 70%;
+}
+
+.iniciarsesionmodaldesign{
+    padding-top: 2%;
+    padding-left: 4%;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+[class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }
+
+/* Barra buscador, animación de barra expansiva */
+
+.search-box {
+    
+   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 60px;
+    background: rgb(73, 197, 255);
+    line-height: 40px;
+    padding: 10px;
+    border-radius:  60px;
+    cursor: pointer;
+    
+}
+
+.search-input {
+    
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    outline: none;
+    border: none;
+    line-height: 40px;
+    width: 0px;
+    float: left;
+    font-size: 1em;
+    transition: 0.7s ease;
+}
+.search-btn {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 50%;
+    float: right;
+    color: #ff7b00;
+    transition: 1s ease;
+}
+
+.search-box:hover > .search-input,
+.search-input:focus {
+width: 400px;
+margin: 0px 8px;
+}
+.search-box:hover> .search-btn,
+.search-input:focus + .search-btn {
+background: rgb(255, 255, 255)   ;
+color: #101010;
+}
+
+.badge.fs-4.NuestrasCategorias{
+    color:rgb(73, 197, 255);
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    padding-left: 15%;
+}
+
+.fw-bold.NuestrasCategorias{
+    color:rgb(0, 0, 0);
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    
+}

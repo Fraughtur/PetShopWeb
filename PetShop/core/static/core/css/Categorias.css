@@ -1,0 +1,343 @@
+.row.fundacion {
+    text-align: center;
+    background-color: rgb(119, 212, 255);
+    color: white;
+    padding-left: 10%;
+}
+
+.badge.text-wrap {
+    color: rgb(0, 0, 0);
+}
+.txtprimerabarra{
+    color: white;
+}
+
+.txtprimerabarra:hover{
+    color: black;
+}
+.btn.rounded{
+    background-color: rgb(200, 202, 202);
+}
+
+.btn.btn-secundary{
+    background-color: rgb(165, 165, 165);
+}
+.btn.btn.btn-secundary:hover{
+    background-color: rgb(73, 197, 255);
+}
+
+.container{
+    background: rgb(73, 197, 255);
+}
+.container-fluid{
+    background: rgb(73, 197, 255);
+}
+
+.container-fluid.containernavbar{
+    background: rgb(255, 255, 255);
+}
+
+.container-fluid.containeradress{
+    background-color: white;
+}
+
+
+body{
+    /* background: url("../IMAGES/background2.png") repeat;  */
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    
+}
+
+.carousel-inner  {
+    width:100%;
+    height:100%;
+  }
+
+.carousel.slide.v2{
+    width: 400px;
+    height: 400px;
+  
+  }
+
+  .w-100v3{
+      width: 50%;
+      height: 50%;
+      margin-left: 25%;
+  }
+
+  .carousel.slide.carouselcategory {
+        width: 90%;
+        height: 500px;
+  }
+  .sociotext{
+     text-align: center;
+      color: black;
+      font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+      
+  }
+.sociotext2{
+    color: black;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+.colormoney{
+    color: #7A7A00;
+}
+.carousel.item.active {
+    width:100%;
+    height:100%;
+}
+.w-100  {
+    width: 100% ;
+    height: 55vh;
+  }
+
+.containercarouseloffers{
+    background-color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+ }
+
+ .nav-link {
+    width: 100%;
+    height: 100%;
+    background: rgb(73, 197, 255);
+   
+     border: #FFF solid;
+    border-width: 0 0 0 0;
+  
+    
+}
+
+.btncategorytext2{
+    color: #000000;
+ 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    font-size: 13px;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+h1 h2 h3 h4 h5 h6 a p  {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.tiendalocation{
+    margin-left: 2%;
+}
+.navbar-nav{
+    color: white;
+}
+ 
+.categorias {
+    margin-left: 2%;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.carouselcategory{
+    margin-left: 4%;
+    width: 1260px;
+    height: 640px;
+}
+
+.carousel-control-prev .carousel-control-prev-icon {
+    background-color: black;
+}
+
+.carousel-control-next .carousel-control-next-icon{
+    background-color: black;
+}
+
+.col-3.colsocio{
+padding-left: 9%;
+}
+.carousel-indicators  {
+    
+    cursor: pointer;
+    background-color: #939ba3;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 200px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+.w-100 {
+    width: 100% ;
+    height: 35vh;
+  }
+
+.w-100V2 {
+    width: 100% ;
+    height: 10vh;
+}
+
+.footerimage{
+    margin-left: 4%;
+}
+.logocompany{
+    margin-left: 4%;
+}
+
+.footercontainer{
+    background-color: white;
+}
+
+.nav-link.navitemfooter{
+    color: rgb(73, 197, 255);
+    background: rgb(255, 255, 255);
+}
+
+.consultcolor{
+    color: #7A7A00;
+    font-size: 13px;
+}
+
+.consultcolor2{
+    color: black;
+    font-size: 13px;
+}
+
+.consultcolor3{
+    color: rgb(73, 197, 255);
+    font-size: 13px;
+}
+
+.offersday{
+    margin-left: 5%;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.offersday2{
+    margin-left: 5%;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.previuvfooter{
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    background-color: white;
+}
+
+.btn.rounded-bottom{
+    background-color:rgb(187, 187, 187);
+
+}
+
+.regis2{
+    padding-left: 90%;
+}
+
+.rowoffer{
+    background-color: white;
+    color: rgb(73, 197, 255);
+   
+}
+
+.badge.fs-4.NuestrasCategorias{
+    color:rgb(73, 197, 255);
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    padding-left: 15%;
+}
+
+.fw-bold.NuestrasCategorias{
+    color:rgb(0, 0, 0);
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    
+}
+
+/* Barra buscador, animación de barra expansiva */
+
+.search-box {
+    
+   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 60px;
+    background: rgb(73, 197, 255);
+    line-height: 40px;
+    padding: 10px;
+    border-radius:  60px;
+    cursor: pointer;
+    
+}
+
+.search-input {
+    
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    outline: none;
+    border: none;
+    line-height: 40px;
+    width: 0px;
+    float: left;
+    font-size: 1em;
+    transition: 0.7s ease;
+}
+.search-btn {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 50%;
+    float: right;
+    color: #ff7b00;
+    transition: 1s ease;
+}
+
+.search-box:hover > .search-input,
+.search-input:focus {
+width: 400px;
+margin: 0px 8px;
+}
+.search-box:hover> .search-btn,
+.search-input:focus + .search-btn {
+background: rgb(255, 255, 255)   ;
+color: #101010;
+}
+
+[class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }
