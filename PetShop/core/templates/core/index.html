@@ -52,7 +52,7 @@
         <div class="col-xl-3 col-sm-3 col-md-3">
           <br>
           <h1 class=" fw-bold fs-1 logocompany">
-            <a href="index.html"><img src="IMAGES/1.jpg" class="border border-2 border-dark" alt="" width="90" height="72" ></a>
+            <a href="{%url 'home'%}"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="90" height="72" ></a>
             <div class="badge text-wrap fw-bold     " style="width:3rem;">
                 PETSHOP
               </div>
@@ -79,7 +79,7 @@
        <div class="col-xl-4 col-sm-4 col-md-4" style="padding-left: 20%;">
            <br>
 <button type="button" class="btn rounded" data-bs-toggle="modal" data-bs-target="#exampleModal"> 
-    <img src="IMAGES/iniciarsesionlogo.png" alt="" width="30" height="24" >
+    <img src="{% static 'core/img/iniciarsesionlogo.png'%}" alt="" width="30" height="24" >
     Iniciar Sesion
 </button>
 <!-- Inicio de sesión -->
@@ -87,7 +87,7 @@
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header modalbackgroundlogin"> 
-  <a href="index.html"><img src="IMAGES/1.jpg" class="border border-2 border-dark" alt="" width="60" height="60" ></a>
+  <a href="index.html"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="60" height="60" ></a>
             <div class="badge text-wrap fw-bold fs-5 " style="width:6px;">
                 PETSHOP
               </div>
@@ -143,85 +143,86 @@
       </div> 
       
   </div>
- 
-  <div class="container-fluid containeradress">
+    {% comment %} Navbar de la tienda y redes Sociales {% endcomment %}
+    <div class="container-fluid containeradress">
       <div class="row">
           <div class="col-xl-2 col-sm-2 col-md-2 tiendalocation">
               <br>
             <img src="IMAGES/iconomapa.png" width="30" height="24" > Tienda: Calpheon
           </div>
+
+          {% comment %} Redes Sociales {% endcomment %}
           <div class="col-xl-6 col-sm-6 col-md-6">
             <br>
             <h5>Nuestras Redes Sociales: 
               <img src="IMAGES/facebook.png" width="60" height="48">
               <img src="IMAGES/instagram.png" width="60" height="48">
-              <img src="IMAGES/whatsapp.png" width="60" height="48"></h5>
+              <img src="IMAGES/whatsapp.png" width="60" height="48"></h5>      
+          </div>
 
-          
-        </div>
+
           <div class="col-xl-3 col-sm-3 col-md-3">
               <br>
          
-            <h6 class="fw-bold NuestrasCategorias ">NUESTRA TIENDA: <a href="categorias.html"><img src="images/2.png" alt="" width="40" height="40"> </a></h6> 
+            <h6 class="fw-bold NuestrasCategorias ">NUESTRA TIENDA: <a href="{%url 'category' %}"><img src="{% static 'core/img/2.png'%}" alt="" width="40" height="40"> </a></h6> 
            
           </div>
       </div>
- <hr>
- <br>
+      <hr>
+      <br>
     </div>
   <br>
   <div class="row">
     <div class="row">
-        
-         
-           <div class="col-xl-3 col-sm-3 col-md-3">
-            <!-- <div class="badge fs-4 NuestrasCategorias">
-                Nuestras Categorias 
-              </div>  </div> -->
-              <div class="col-xl-6 col-sm-6 col-md-6"></div>
-              <div class="col-xl-3 col-sm-3 col-md-3">
-                </div>
-            </div> 
-          
-     <nav class="navbar navbar-expand-lg navbar-light ">
-       <div class="container-fluid navbar231">
-         <div class="row">
-           <div class="col-xl col-sm col-md">
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDropdownMenuLink" aria-controls="navbarDropdownMenuLink" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarDropdownMenuLink">
-           <ul class="navbar-nav me-auto mb-2 mb-lg-0">     
-            <li class="nav-item imagepadding">
-                <a class="nav-link" href="categorias.html" aria-current="page">
-                    <img class="" src="IMAGES/collaresindex.png" alt="" height="125px" width="125px"> 
-                    <div class="fw-bold  tittlecategory" style="padding-left:25px;">
-                       Collares
-                     </div>  
-                  </a>
-              </li>
-              <li class="nav-item imagepadding">
-                <a class="nav-link " href="categorias.html" aria-current="page">
-                    <img class="" src="IMAGES/bandanaicon.png" alt="" height="125px" width="125px"> 
-                    <div class="fw-bold tittlecategory" style="padding-left:25px;">
-                       Bandanas
-                     </div>  
-                  </a>
-              </li> <li class="nav-item imagepadding">
-                <a class="nav-link " href="categorias.html" aria-current="page">
-                    <img class="" src="IMAGES/identificadoricon.png" alt="" height="125px" width="125px"> 
-                    <div class="fw-bold tittlecategory" style="padding-left:-10px;">
-                       Identificaciones
-                     </div>  
-                  </a>
-              </li>   
-              </a>
-           </ul>
+                 
+      <div class="col-xl-3 col-sm-3 col-md-3">
+      <!-- <div class="badge fs-4 NuestrasCategorias">
+          Nuestras Categorias 
+        </div>  </div> -->
+        <div class="col-xl-6 col-sm-6 col-md-6"></div>
+        <div class="col-xl-3 col-sm-3 col-md-3">
           </div>
-         </div>
+      </div> 
+        {% comment %} Navbar de las categorias Bandanas, Collares, Identificaciones {% endcomment %}
+      <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid navbar231">
+          <div class="row">
+            <div class="col-xl col-sm col-md">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDropdownMenuLink" aria-controls="navbarDropdownMenuLink" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarDropdownMenuLink">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">     
+              <li class="nav-item imagepadding">
+                  <a class="nav-link" href="categorias.html" aria-current="page">
+                      <img class="" src="IMAGES/collaresindex.png" alt="" height="125px" width="125px"> 
+                      <div class="fw-bold  tittlecategory" style="padding-left:25px;">
+                        Collares
+                      </div>  
+                    </a>
+                </li>
+                <li class="nav-item imagepadding">
+                  <a class="nav-link " href="categorias.html" aria-current="page">
+                      <img class="" src="IMAGES/bandanaicon.png" alt="" height="125px" width="125px"> 
+                      <div class="fw-bold tittlecategory" style="padding-left:25px;">
+                        Bandanas
+                      </div>  
+                    </a>
+                </li> <li class="nav-item imagepadding">
+                  <a class="nav-link " href="categorias.html" aria-current="page">
+                      <img class="" src="IMAGES/identificadoricon.png" alt="" height="125px" width="125px"> 
+                      <div class="fw-bold tittlecategory" style="padding-left:-10px;">
+                        Identificaciones
+                      </div>  
+                    </a>
+                </li>   
+                </a>
+            </ul>
+            </div>
+          </div>
+          </div>
         </div>
-       </div>
-     </nav>
+      </nav>
    
      <div class="row">
        <div class="col-xl-2 col-sm-2 col-md-2">   
