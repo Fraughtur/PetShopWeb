@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, 'core/index.html')
+
+def category(request):
+    return render(request, 'core/categorias.html')

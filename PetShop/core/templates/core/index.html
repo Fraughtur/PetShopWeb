@@ -52,7 +52,7 @@
         <div class="col-xl-3 col-sm-3 col-md-3">
           <br>
           <h1 class=" fw-bold fs-1 logocompany">
-            <a href="index.html"><img src="IMAGES/1.jpg" class="border border-2 border-dark" alt="" width="90" height="72" ></a>
+            <a href="{%url 'home' %}"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="90" height="72" ></a>
             <div class="badge text-wrap fw-bold     " style="width:3rem;">
                 PETSHOP
               </div>
@@ -162,7 +162,7 @@
           <div class="col-xl-3 col-sm-3 col-md-3">
               <br>
          
-            <h6 class="fw-bold NuestrasCategorias ">NUESTRA TIENDA: <a href="categorias.html"><img src="images/2.png" alt="" width="40" height="40"> </a></h6> 
+            <h6 class="fw-bold NuestrasCategorias ">NUESTRA TIENDA: <a href="{%url 'category'%}"><img src="images/2.png" alt="" width="40" height="40"> </a></h6> 
            
           </div>
       </div>
@@ -193,7 +193,7 @@
          <div class="collapse navbar-collapse" id="navbarDropdownMenuLink">
            <ul class="navbar-nav me-auto mb-2 mb-lg-0">     
             <li class="nav-item imagepadding">
-                <a class="nav-link" href="categorias.html" aria-current="page">
+                <a class="nav-link" href="category/" aria-current="page">
                     <img class="" src="IMAGES/collaresindex.png" alt="" height="125px" width="125px"> 
                     <div class="fw-bold  tittlecategory" style="padding-left:25px;">
                        Collares
@@ -201,7 +201,7 @@
                   </a>
               </li>
               <li class="nav-item imagepadding">
-                <a class="nav-link " href="categorias.html" aria-current="page">
+                <a class="nav-link " href="Petshop/category/" aria-current="page">
                     <img class="" src="IMAGES/bandanaicon.png" alt="" height="125px" width="125px"> 
                     <div class="fw-bold tittlecategory" style="padding-left:25px;">
                        Bandanas
