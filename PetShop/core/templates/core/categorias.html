@@ -98,7 +98,7 @@
         <div class="col-xl-3 col-sm-3 col-md-3">
           <br>
           <h1 class=" fw-bold fs-1 logocompany">
-            <a href="{%url 'home' %}"><img src="IMAGES/1.jpg" class="border border-2 border-dark" alt="" width="90" height="72" ></a>
+            <a href="{%url 'home' %}"><img src="{%static 'core/img/1.jpg' %}" class="border border-2 border-dark" alt="" width="90" height="72" ></a>
             <div class="badge text-wrap fw-bold     " style="width:3rem;">
                 PETSHOP
               </div>
@@ -115,7 +115,7 @@
                 <input type="text"  placeholder="Buscar en la tienda"
                 class="search-input rounded-pill" />
                 <a href="#" class="search-btn">
-                <img src="IMAGES/lupa.png" alt="" width="25" height="25" >
+                <img src="{%static 'core/img/lupa.png' %}" alt="" width="25" height="25" >
                 </a>
             </div>
           </form>
@@ -135,7 +135,7 @@
        <div class="col-xl-4 col-sm-4 col-md-4" style="padding-left: 20%;">
            <br>
 <button type="button" class="btn rounded" data-bs-toggle="modal" data-bs-target="#exampleModal"> 
-    <img src="IMAGES/iniciarsesionlogo.png" alt="" width="30" height="24" >
+    <img src="{%static 'core/img/iniciarsesionlogo.png' %}" alt="" width="30" height="24" >
     Iniciar Sesion
 </button>
 <!-- Inicio de sesión -->
@@ -143,50 +143,50 @@
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header modalbackgroundlogin"> 
-  <a href="index.html"><img src="IMAGES/1.jpg" class="border border-2 border-dark" alt="" width="60" height="60" ></a>
+  <a href="index.html"><img src="{%static 'core/img/1.jpg' %}" class="border border-2 border-dark" alt="" width="60" height="60" ></a>
             <div class="badge text-wrap fw-bold fs-5 " style="width:6px;">
                 PETSHOP
               </div>
   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
-
-
-
 </div>
-<div class="row">
-  <div class="col col-sm col-md">
- <p class="iniciarsesionmodaldesign fw-bold fs-6">Iniciar Sesion</p>
-</div>
-</div>
-<div class="modal-body modalbackgroundlogin">
-  <form action="/action_page.php">
-    <!-- Usuario -->
-    <div class="form-floating mb-3 mt-1">
-      
-      <input type="text" class="form-control " id="uname floatingInput" placeholder="Ingrese usuario"
-       name="uname" required minlength="6" && maxlength="30">
-       <label for="uname floatingInput">Usuario</label>
-      
-    <!-- Contraseña -->
-    <div class=" form-floating mb-3 mt-4">
-    
-        <input type="password"
-               class="form-control"
-               id="floatingPassword" placeholder="Ingrese Contraseña"
-               pattern="(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*"
-               title="Debe tener al menos una mayúscula, una minúscula y un dígito"
-               required minlength="8" && maxlength="20" >  <label for="pwd floatingPassword">Contraseña</label>        
+
+  <div class="row">
+    <div class="col col-sm col-md">
+      <p class="iniciarsesionmodaldesign fw-bold fs-6">Iniciar Sesion</p>
     </div>
-    <!-- Desea Guardar Contraseña -->
-    <div class="form-check mb-3">
-      <input class="form-input" type="checkbox" id="switch"  
-      name="remember" >
-      <label class="form-label" for="myCheck">¿Guardar Contraseña?.</label>
+  </div>
+  <!-- div separador -->
+
+    <div class="modal-body modalbackgroundlogin">
+      <form action="/action_page.php">
+      <!-- Usuario -->
+        <div class="form-floating mb-3 mt-1">      
+          <input type="text" class="form-control " id="uname floatingInput" placeholder="Ingrese usuario"
+          name="uname" required minlength="6" && maxlength="30">
+          <label for="uname floatingInput">Usuario</label>
+        
+      <!-- Contraseña -->
+          <div class=" form-floating mb-3 mt-4">
+        
+            <input type="password"
+                  class="form-control"
+                  id="floatingPassword" placeholder="Ingrese Contraseña"
+                  pattern="(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*"
+                  title="Debe tener al menos una mayúscula, una minúscula y un dígito"
+                  required minlength="8" && maxlength="20" >  <label for="pwd floatingPassword">Contraseña</label>        
+          </div>
+      <!-- Desea Guardar Contraseña -->
+          <div class="form-check mb-3">
+            <input class="form-input" type="checkbox" id="switch"  
+            name="remember" >
+            <label class="form-label" for="myCheck">¿Guardar Contraseña?.</label>
+          </div>
+
+          <button type="submit" class="btn btn-secundary">Iniciar Sesion</button>
+      </form>
     </div>
-  <button type="submit" class="btn btn-secundary">Iniciar Sesion</button>
-  </form>
-</div>
-</div>
+  </div>
 </div>
 </div>
        </div>
@@ -199,21 +199,21 @@
       <div class="row">
           <div class="col-xl-2 col-sm-2 col-md-2 tiendalocation">
               <br>
-            <img src="IMAGES/iconomapa.png" width="30" height="24" > Tienda: Calpheon
+            <img src="{%static 'core/img/iconomapa.png' %}" width="30" height="24" > Tienda: Calpheon
           </div>
           <div class="col-xl-6 col-sm-6 col-md-6">
             <br>
             <h5>Nuestras Redes Sociales: 
-              <img src="IMAGES/facebook.png" width="60" height="48">
-              <img src="IMAGES/instagram.png" width="60" height="48">
-              <img src="IMAGES/whatsapp.png" width="60" height="48"></h5>
+              <img src="{%static 'core/img/facebook.png' %}" width="60" height="48">
+              <img src="{%static 'core/img/instagram.png' %}" width="60" height="48">
+              <img src="{%static 'core/img/whatsapp.png' %}" width="60" height="48"></h5>
 
           
         </div>
           <div class="col-xl-3 col-sm-3 col-md-3">
               <br>
          
-            <h6 class="fw-bold NuestrasCategorias ">NUESTRA TIENDA: <a href="categorias.html"><img src="images/2.png" alt="" width="40" height="40"> </a></h6> 
+            <h6 class="fw-bold NuestrasCategorias ">NUESTRA TIENDA: <a href="categorias.html"><img src="{%static 'core/img/2.png' %}" alt="" width="40" height="40"> </a></h6> 
            
           </div>
       </div>
@@ -278,7 +278,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="card">
-            <img src="IMAGES/collaroferta.jpg" class=" d-block w-100" alt="...">
+            <img src="{%static 'core/img/collaroferta.jpg' %}" class=" d-block w-100" alt="...">
             <div class="card-body">
               <h5 class="carouseltxtoffers fw-bold fs-1  text-dark text-center" >KCUCOP</h5>
               <p class="carouseltxtoffers fw-bold fs-5  text-dark">Collar táctico perro grande </p>
@@ -291,7 +291,7 @@
         </div>
         <div class="carousel-item">
           <div class="card">
-            <img src="IMAGES/bandanagatooffer.jpg" class=" d-block w-100" alt="...">
+            <img src="{%static 'core/img/bandanagatooffer.jpg' %}" class=" d-block w-100" alt="...">
             <div class="card-body">
               <h5 class="carouseltxtoffers fw-bold fs-1  text-dark text-center" >BOWTIE </h5>
               <p class="carouseltxtoffers fw-bold fs-5  text-dark"> collares de gato con campanas</p>
@@ -302,7 +302,7 @@
         </div>
         <div class="carousel-item">
           <div class="card">
-            <img src="IMAGES/idgato.jpg" class=" d-block w-100" alt="...">
+            <img src="{%static 'core/img/idgato.jpg' %}" class=" d-block w-100" alt="...">
             <div class="card-body">
               <h5 class="carouseltxtoffers fw-bold fs-1  text-dark text-center" >DISONTAG </h5>
               <p class="carouseltxtoffers fw-bold fs-5  text-dark">Etiquetas de identificación de mascotas con código QR </p>
@@ -327,7 +327,7 @@
    
     <div class="carousel-inner ">
       <div class="carousel-item active">
-        <img src="IMAGES/61fR936SFiL._AC_SL1000_.jpg" class="d-block w-100v3" alt="...">
+        <img src="{%static 'core/img/61fR936SFiL._AC_SL1000_.jpg' %}" class="d-block w-100v3" alt="...">
         <div class="carousel-caption d-none d-md-block">
         </div>
         <h5 class="sociotext fw-bold text-center"> <a class="sociotext fs-3  fw-bold" href="">SUPERBUDDY</a> </h5>
@@ -336,14 +336,14 @@
          
       </div>
       <div class="carousel-item">
-        <img src="IMAGES/81d+o-E9SwL._AC_SL1500_.jpg" class="d-block w-100v3" alt="...">
+        <img src="{%static 'core/img/81d+o-E9SwL._AC_SL1500_.jpg' %}" class="d-block w-100v3" alt="...">
         <div class="carousel-caption d-none d-md-block">
           </div>
           <h5 class="sociotext fw-bold text-center"> <a class="sociotext fs-3  fw-bold" href="" >WEEEWOODAY</a> </h5>
           <p class="sociotext2 text-center  fw-bold">Collar de 3 piezas con diamantes de imitación brillantes para mascotas. </p>
       </div>
       <div class="carousel-item">
-        <img src="IMAGES/611+3hTIQqL._AC_SL1001_.jpg" class="d-block w-100v3" alt="...">
+        <img src="{%static 'core/img/611+3hTIQqL._AC_SL1001_.jpg' %}" class="d-block w-100v3" alt="...">
         <div class="carousel-caption d-none d-md-block">
          </div>
          <h5 class="sociotext fw-bold text-center"> <a class="sociotext fs-3 fw-bold" href="">AAABLING</a> </h5>
@@ -362,9 +362,9 @@
   <div class="col-xl-3 col-sm-3 col-md-3 colsocio" > 
     <div class="card" style="width: 18rem;">
       <p class="fs-4 fw-bold text-center">¡Pedidos de rapida entrega!</p>
-      <img src="IMAGES/camion.png" class="card-img-top" alt="...">
+      <img src="{%static 'core/img/camion.png' %}" class="card-img-top" alt="...">
       <p class="fs-4 fw-bold text-center">¡Se nuestro Socio para descuentos unicos!</p>
-      <img src="IMAGES/5%.png" class="card-img-top" alt="..." width="50px" height="150px">
+      <img src="{%static 'core/img/5%.png' %}" class="card-img-top" alt="..." width="50px" height="150px">
       <p class="fs-4 fw-bold text-center">¡Descuento para todos nuestros productos siendo socio!</p>
   </div>
 </div>
@@ -571,7 +571,7 @@
 <br>
 <div class="row">
   <div class="col text-center">  <h1 class=" fw-bold fs-1 logocompany">
-    <a href="index.html"><img src="IMAGES/1.jpg" class="border border-2 border-dark" alt="" width="90" height="72" ></a>
+    <a href="index.html"><img src="{%static 'core/img/1.jpg' %}" class="border border-2 border-dark" alt="" width="90" height="72" ></a>
     <div class="badge text-wrap fw-bold     " style="width:3rem;">
         PETSHOP
       </div>
