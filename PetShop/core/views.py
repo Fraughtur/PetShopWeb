@@ -7,3 +7,5 @@ def home(request):
 
 def category(request):
     return render(request, 'core/categorias.html')
+def profile(request):
+    return render(request, 'core/Perfil.html')
