@@ -155,26 +155,30 @@
 <!-- INICIO NAVBAR-->
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark ">
-        <div class="container-fluid">
+        <div class="container-fluid"> 
+           <div class="row">
           <div class="navbar-nav">
-            <div class="logoinnavbar">
-                <div class="">
+                <div class="col-3">
                     <a href="{%url 'home' %}"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="90" height="72" ></a>
                    <span class="bagde fw-bold fs-2">PETSHOP</span>
                 </div>
-            </div>
-           <div class="categoryinnavbar">
+            
+           <div class="col-8  categoryinnavbar">
             <a href="{%url 'category' %}" class="categorydiv rounded-3 text-decoration-none">Collares </a>
             <a href="{%url 'category' %}" class="categorydiv rounded-3 text-decoration-none">Bandanas </a>
             <a href="{%url 'category' %}" class="categorydiv rounded-3 text-decoration-none">Identificaciones</a>
             <a href="{%url 'category' %}" class="categorydiv rounded-3 text-decoration-none">Otros</a>
-            <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#Contactanos">Contactanos</button>
-            <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#Register">Registrate</button>
-            <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#IniciarSesion">Iniciar Sesion</button>
-            <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#Ayuda">Ayuda</button>
-           
+             
+           {% comment %} <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#Contactanos">Contactanos</button> {% endcomment %}  
+          <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#Register">Registrate</button>
+          <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#IniciarSesion">Iniciar Sesion</button>
+          <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#Ayuda">Ayuda</button>
+
            </div>
-        
+
+       
+           
+        </div>
         </div>
        
         </div>
@@ -188,6 +192,7 @@
   
   <!-- INICIO CAROUSEL -->
 <div class="container-fluid">
+  <div class="col-12 ">
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -214,6 +219,7 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+</div>
 </div>
 
 <!-- TERMINO CAROUSEL -->
