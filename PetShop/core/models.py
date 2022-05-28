@@ -13,7 +13,6 @@ class Usuario(models.Model):
     email_usuario = models.EmailField(max_length=100)
     celular_usuario = models.IntegerField(max_length=8)
     direccion_usuario = models.TextField(max_length=200)
-    id_socio = models.ForeignKey("Socio.Model", on_delete=models.CASCADE)
 
 class Socio(models.Model):
     id_socio = models.models.IntegerField(primary_key=TRUE, max_leght=5)
