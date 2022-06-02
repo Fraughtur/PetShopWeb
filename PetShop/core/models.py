@@ -30,3 +30,45 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre_producto
+
+class Socio(models.Model):
+    id_socio = models.IntegerField(primary_key=TRUE, verbose_name='Id Socio')
+    tipo_socio = models.CharField(max_length=10, verbose_name='Tipo de Socio')
+    donacion_socio = models.IntegerField( verbose_name='Donacion Socio')
+    
+    def __str__(self):
+        return self.tipo_socio
+
+class Usuario(models.Model):
+    id_usuario = models.IntegerField(primary_key=TRUE, verbose_name='Id de usuario')
+    nombre_usuario = models.CharField(max_length=30, verbose_name='Nombre Usuario')
+    contraseña_usuario = models.CharField(max_length=20, verbose_name='Contraseña Usuario')
+    email_usuario = models.EmailField(max_length=100, verbose_name='Correo electronico Usuario')
+    celular_usuario = models.IntegerField( verbose_name='Celular Usuario')
+    direccion_usuario = models.TextField(max_length=200, verbose_name='Direccion Usuario')
+    id_socio = models.ForeignKey(Socio, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.nombre_usuario
+
+class Terminos(models.Model):
+    id_nuevos_productos = models.IntegerField( verbose_name='id nuevos productos')
+    id_nov_ofertas = models.IntegerField( verbose_name='id novedades y ofertas')
+    si_no = models.CharField(max_length=2, verbose_name='opcion si o no')
+    
+    def __str__(self):
+        return self.si_no
+
+class Region(models.Model):
+    id_region = models.IntegerField(primary_key=TRUE, verbose_name='id region')
+    nombre_region = models.CharField(max_length=20, verbose_name='nombre region')
+    
+    def __str__(self):
+        return self.nombre_region
+
+class Comuna(models.Model):
+    id_comuna = models.IntegerField(primary_key=TRUE, verbose_name='id comuna')
+    nombre_comuna = models.CharField(max_length=25, verbose_name='nombre comuna')
+    
+    def __str__(self):
+        return self.nombre_comuna
