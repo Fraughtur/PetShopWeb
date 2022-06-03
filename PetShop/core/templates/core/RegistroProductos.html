@@ -18,15 +18,18 @@
     <h1>documentacion</h1>
     <br>
     <div class="row">
-        <form method="POST" action=""  enctype="multipart/form-data">
+        <form method="post" action="" id="formularioregistroproducto" enctype="multipart/form-data">
             {% csrf_token %}
         <div class="form-group">
-            {{ form.as_p }}
+            {{ form.as_table }}
         </div>
  
         <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
         <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
         <div  id="error" class="alert alert-danger" role="alert"></div>
+        <div class="alert alert-success" role="alert">
+            {{mensajeproducto}}
+        </div>
 </form>
  
 </div>

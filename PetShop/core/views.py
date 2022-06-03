@@ -24,7 +24,12 @@ def profile(request):
 def registroproductos(request):
 
     productonuevo ={
-        'form':ProductoForm()
+        'form': ProductoForm()
     }
 
+    if request.method== 'POST':
+        formularioregistroproducto = ProductoForm(request.POST)
+        if formularioregistroproducto.is_valid(): 
+            formularioregistroproducto.save()
+        productonuevo['mensajeproducto'] = "Producto agregado exitosamente"
     return render(request,'core/RegistroProductos.html',productonuevo)

@@ -8,9 +8,9 @@ class ProductoForm(ModelForm):
             fields =['nombre_producto','descripcion_producto','precio_producto','stock_producto','imagen_producto','categoria']
             labels ={
                 'nombre': '',
-                'descripcion': '',
-                'precio': '',
-                'stock': '',
-                'imagen': '',
-                'categoria': '',
+               'descripcion': '',
+              'precio': '',
+             'stock': '',
+             'imagen': '',
+             'categoria': '',
             }
