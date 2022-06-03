@@ -28,7 +28,7 @@ def registroproductos(request):
     }
 
     if request.method== 'POST':
-        formularioregistroproducto = ProductoForm(request.POST)
+        formularioregistroproducto = ProductoForm(data=request.POST, files=request.FILES)
         if formularioregistroproducto.is_valid(): 
             formularioregistroproducto.save()
         productonuevo['mensajeproducto'] = "Producto agregado exitosamente"
