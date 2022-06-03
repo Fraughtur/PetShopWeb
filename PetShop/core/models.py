@@ -1,3 +1,4 @@
+from statistics import correlation
 from django.db import models
 
 
@@ -22,3 +23,23 @@ class Producto(models.Model):
  
     def __str__(self):
         return self.nombre_producto
+    
+class Socio(models.Model):
+    id_socio= models.ImageField(primary_key=True, verbose_name='Id de Socio')
+    pertenece= models.CharField(max_length=2, verbose_name='Pertenece si o no')
+    
+    def __str__(self):
+        return self.pertenece
+    
+class Usuario(models.Model):
+    id_usuario=models.IntegerField(primary_key=True, verbose_name='Id de Usuario')
+    nombre_usuario= models.CharField(max_length=30, verbose_name='Nombre Usuario')
+    correo= models.EmailField(verbose_name='Email de Usuario')
+    contrasena= models.CharField(max_length=16, verbose_name='Contraseña Usuario')
+    direccion=models.TextField(max_length=50, verbose_name='Direccion Usuario')
+    celular= models.IntegerField( verbose_name='Celular Usuario')
+    socio= models.ForeignKey(Socio, on_delete=models.CASCADE)
+    
+    def __init__(self):
+        return self.id_usuario
+    
