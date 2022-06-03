@@ -25,7 +25,7 @@ class Producto(models.Model):
         return self.nombre_producto
     
 class Socio(models.Model):
-    id_socio= models.ImageField(primary_key=True, verbose_name='Id de Socio')
+    id_socio= models.IntegerField(primary_key=True, verbose_name='Id de Socio')
     pertenece= models.CharField(max_length=2, verbose_name='Pertenece si o no')
     
     def __str__(self):
