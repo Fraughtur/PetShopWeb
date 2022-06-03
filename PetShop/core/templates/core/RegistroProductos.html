@@ -15,28 +15,21 @@
 
 </head>
 <body>
-
+    <h1>documentacion</h1>
+    <br>
     <div class="row">
-        <div class="col">
-        {% for ve in productos %}
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{ve.nombre_producto}}</h5>
-                <p class="card-text">{{ve.precio_producto}}</p>
-                <p class="card-text">{{ve.stock_producto}}</p>
-                {% if ve.imagen_producto %}
-             <img src="{{ ve.imagen_producto.url }}" width="100" > 
-              {% endif %}
-                <p class="card-text">{{ve.stock_producto}}</p>
-              <p class="card-text">{{ve.categoria}}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-             
-            </div>
-          </div>
-        {% endfor %}
+        <form method="POST" action=""  enctype="multipart/form-data">
+            {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+ 
+        <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
+        <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+        <div  id="error" class="alert alert-danger" role="alert"></div>
+</form>
+ 
 </div>
-    </div>
 
 
 </body>
