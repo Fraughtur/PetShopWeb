@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Producto
-from core.forms import ProductoForm, CustomUserCreationForm
+from .models import Producto, Usuario 
+from core.forms import ProductoForm, UsuarioForm
 
 # Create your views here.
 
@@ -50,32 +50,35 @@ def registroproductos(request):
         productonuevo['mensajeproducto'] = "Producto agregado exitosamente"
     return render(request,'core/RegistroProductos.html',productonuevo)
 
-def modificarproductos(request, id):
- 
-    productos = get_object_or_404(Producto, nombre_producto=id)
 
-    datamodify ={
-        'form': ProductoForm(instance=productos)
+
+def modificarproductos(request, id):
+
+    producto =get_object_or_404(Producto, nombre_producto=id)
+
+    data ={
+        'form': ProductoForm(instance=producto)
     }
 
-    if request.method== 'POST':
-         formulariomodificarproducto = ProductoForm(data=request.POST, instance=productos , files=request.FILES)
-         if formulariomodificarproducto.is_valid(): 
+    if request.method == 'POST':
+        formulariomodificarproducto= ProductoForm(data=request.POST, instance=producto, files=request.FILES)
+        if formulariomodificarproducto.is_valid():
             formulariomodificarproducto.save()
+            return redirect(to="listarproductos")
+            data["form"] = formulariomodificarproducto
+
+    return render(request,'core/ModificarProductos.html',data)
+
+
+def eliminarproductos(request,id):
+    producto = get_object_or_404(Producto, nombre_producto=id)
+    producto.delete()
     return redirect(to="listarproductos")
-
-    return render(request,'core/ModificarProductos.html', datamodify)
-
-def eliminarproducto(request, id):
-    productos = get_object_or_404(Producto,nombre_producto=id)
-    productos.delete()
-    return redirect(to="listarproductos")
-
 
 def registro(request):
 
     data = {
-        'form': CustomUserCreationForm()
+        'regis': UsuarioForm()
     }
 
     return render(request,'core/Registro.html',data) 
