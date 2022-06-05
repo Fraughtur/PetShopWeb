@@ -2,28 +2,6 @@ body{
  
     background: url('../img/espiro_pink.jpg') repeat;
 }
-/* DISEÑO ERRORES, SUCCESS */
-
-.input-control.success input {
-    border-color: #09c372;
-}
-
-.input-control.error input {
-    border-color: #ff3860;
-}
-
-.input-group {
-    color: #ff3860;
-    font-size: 9px;
-    height: 13px;
-}
-
-.errorRegister{
-    color: #ff3860;
-    font-size: 9px;
-    height: 13px;
-}
-
 
 /* DISEÑO DE NAVBAR */
 
@@ -153,6 +131,14 @@ color: red;
     text-align: center;
     margin-left: 350px;
 }
+
+.logotittlenavbardestacados{
+        margin-top: 25px;
+        padding-left: 10px;
+        margin-right: 200px;
+  
+}
+
 /* TERMINO SOCIO DISEÑO */
 
 /* INICIO CATEGORIAS DESTACADAS */
@@ -191,23 +177,27 @@ color: red;
 
 /* INICIO FOOTER  */
 
+.footercontainer{
+    background-color: rgb(119,30,87);
+}
+
 .logoinfooter{
     padding-right: 300px;
     padding-top: 100px;
 }
 .consultcolor{
-    color: #7A7A00;
+    color: #1c7a00;
     font-size: 13px;
 }
 
 .consultcolor2{
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 13px;
 }
 
 .nav-link.navitemfooter{
-    color: rgb(73, 197, 255);
-    background: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+   
 }
 /* TERMINO FOOTER  */
 

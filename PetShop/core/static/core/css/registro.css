@@ -1,0 +1,84 @@
+body{
+ 
+    background: url('../img/espiro_pink.jpg') repeat;
+}
+
+
+/* DISEÑO DE NAVBAR */
+
+.navbar{
+    background-color: rgb(119,30,87);
+}
+
+.logotittlenavbar{
+    padding-left: 10px;
+    margin-right: 200px;
+}
+
+.logotittle{
+    color: white;
+}
+
+
+.categorydiv{
+    margin-top: 40px;
+    text-align: center;
+    margin-left: 90px;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+  border: solid;
+}
+
+.categorydivextra{
+    margin-left: 300px;
+  
+    text-align: center;
+    color: rgb(255, 255, 255);
+   padding: 5px;
+  border: solid;
+}
+
+.categorydivextra2{
+    margin-left: 10px;
+  
+    text-align: center;
+    color: rgb(255, 255, 255);
+   padding: 5px;
+  border: solid;
+}
+
+
+.navbar-toggler-icon{
+background-color: white;
+}
+
+.categorydiv:hover{
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    }
+
+  
+
+
+.categorydivextra:hover{
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+.categorydivextra2:hover{
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+.categorydiv:hover{
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    }
+
+.categorylinkcustom{
+    color: red;
+}    
+/* TERMINO DISEÑO NAVBAR */

@@ -18,121 +18,6 @@
 </head>
 <body>
  
-<!-- INICIO REGISTRATE -->
-
-<div class="modal fade " id="Register" tabindex="-1"  aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">PETSHOP</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body ">
-          <form class="row g-3 " action="{%url 'profile'%}" method="post" >
-            <div class="col-md-12 ">
-              <label for="UsernameRegister" class="form-label">Usuario</label>
-              <div class="input-group ">
-                <input type="text" class="form-control" id="UsernameRegister" aria-describedby="inputGroupPrepend" >
-                <div class="errorRegister"></div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <label for="EmailRegister" class="form-label" >Email address</label>
-              <input type="email" class="form-control" id="EmailRegister"  >
-              <div class="errorRegister"></div>
-            </div>
-            <div class="col-md-12">
-              <label for="RegisterPassword" class="form-label">Password</label>
-              <input type="password" class="form-control" id="RegisterPassword" >   
-              </select>
-              <div class="errorRegister"></div>
-            </div>
-            <div class="col-md-12">
-              <label for="RegisterPasswordValidate" class="form-label">Password Confirm</label>
-              <input type="password" class="form-control" id="RegisterPasswordValidate" >
-  
-              </select>
-              <div class="errorRegister"></div>
-            </div>
-            <div class="modal-footer">
-          <div class="col-12">
-          <button class="btn btn-secundary23 " data-bs-toggle="modal" data-bs-target="#Register" > 
-            <button class="btn btn-primary" type="submit"  >Registrate</button>
-          </div>
-         
-        </div>
-          </form> 
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  
-
-<!-- TERMINO REGISTRATE -->
-
-
-<!-- INICIO INICIAR SESION -->
-
-<div class="modal fade " id="IniciarSesion" tabindex="-1" aria-labelledby="IniciarSesionLabel" aria-hidden="true">
-    <div class="modal-dialog">
-    <div class="modal-content">
-    <div class="modal-header modalbackgroundlogin"> 
-      <a href="{%url 'home' %}"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="60" height="60" ></a>
-                <div class="badge text-wrap fw-bold fs-5 " style="width:6px;">
-                    PETSHOP
-                  </div>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    
-    
-    
-    
-    </div>
-    <div class="row">
-      <div class="col-xl-1 col-sm-1 col-md-1">
-     <p class="iniciarsesionmodaldesign fw-bold fs-6">Iniciar Sesion</p>
-    </div>
-    </div>
-    <div class="modal-body modalbackgroundlogin">
-      <form action="{%url 'profile'%}" method="get">
-        <!-- Usuario -->
-        <div class="form-floating mb-3 mt-1">
-          
-          <input type="text" class="form-control " id="uname floatingInput" placeholder="Ingrese usuario"
-           name="uname" required minlength="6" && maxlength="30">
-           <label for="uname floatingInput">Usuario</label>
-          
-        <!-- Contraseña -->
-        <div class=" form-floating mb-3 mt-4">
-        
-            <input type="password"
-                   class="form-control"
-                   id="floatingPassword" placeholder="Ingrese Contraseña"
-                   pattern="(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*"
-                   title="Debe tener al menos una mayúscula, una minúscula y un dígito"
-                   required minlength="8" && maxlength="20" >  <label for="pwd floatingPassword">Contraseña</label>        
-        </div>
-        <!-- Desea Guardar Contraseña -->
-        <div class="form-check mb-3">
-          <input class="form-input" type="checkbox" id="switch"  
-          name="remember" >
-          <label class="form-label" for="myCheck">¿Guardar Contraseña?.</label>
-        </div>
-        
-          <button type="submit" class="btn btn-secundary">Iniciar Sesion</button>
-      <button class="btn btn-secundary23 " data-bs-toggle="modal" data-bs-target="#Log
-      in" > 
-        <br>
-        <p class=" text-decoration-none fw-bold text-info">
-        ¿No tenes cuenta eh? </p></button>
-      </form>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
-<!-- TERMINO INICIAR SESION -->
 
 <!-- INICIO NAVBAR-->
 
@@ -159,7 +44,7 @@
                 <a href="{%url 'category' %}" class="categorydiv rounded-3 fw-bold text-decoration-none">Identificaciones</a>
               </li>
               <li class="nav-item">
-                <a href="{%url 'category' %}" class="categorydivextra rounded-3 fw-bold text-decoration-none">Registrate/Inicia Sesion</a>
+                <a href="{%url 'registro' %}" class="categorydivextra rounded-3 fw-bold text-decoration-none">Registrate/Inicia Sesion</a>
               </li>
               <li class="nav-item">
                 <a href="{%url 'category' %}" class="categorydivextra2 rounded-3 fw-bold text-decoration-none">Socios</a>
@@ -213,13 +98,14 @@
   <div class="row">
     <div class="col">
     <div class="custompromosocio fw-bold fs-2 ">
-      <img  src="{% static 'core/img/5%.png' %}" width="120" height="120" >Descuento siendo socio ya!
-    
+      <img  src="{% static 'core/img/5%new.png' %}" width="120" height="120" >Descuento siendo socio ya!
 </div>
   </div>
   <div class="col">
-    <a href="{%url 'home' %}"><img src="{% static 'core/img/1.jpg' %}" class="border border-2 border-dark" alt="" width="60" height="52" ></a>
-   <span class="bagde fw-bold fs-2">PETSHOP</span>
+    <div class="logotittlenavbardestacados">
+      <a href="{%url 'home' %}"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="90" height="72" > </a>
+      <span class=" fw-bold fs-2 logotittle text-decoration-none">PETSHOP</span>
+    </div>
 </div> 
 
 </div>
@@ -233,45 +119,82 @@
     <div class="row ">
         <h2 class="destacadostittle fw-bold text-center ">
         DESTACADOS
+        <hr class="border border-white border-5 ">
       </h2>
     </div>
-    <div class="row">
-      <div class="col">
-      {% for ve in productos %}
-      <div class="card " style="width: 18rem";>
-       
+   <div class="row">
+<div class="card-group" >
+    {% for ve in productos %} 
+     
+        <div class="col">
+        <div class="card border border-5" style="width: 25rem; margin-top: 20px; background-color: rgb(119,30,87);";>
         {% if ve.imagen_producto %}
+        <p class="card-text" style="color: rgb(255, 255, 255);  text-transform: initial; margin-left: 20px; margin-top: 10px;  font-family: 'Montserrat', Helvetica, Arial, sans-serif;  font-size: 12px; font-weight: bold;">{{ve.categoria}}</p>
         <div class="imgproducto" >
-        <img src="{{ ve.imagen_producto.url }}" width="100%" style="padding:20px"  >
+        <img src="{{ ve.imagen_producto.url }}" width="250px" height="250px" style="padding-left:25px; padding-right:25px; padding-bottom:25px; margin-left: 75px; "  >
         </div>
          {% endif %}
        
           <div class="card-body">
-            <h5 class="tituloproducto" style="color: rgb(73, 8, 133); text-align: center;" class="fw-bold">{{ve.nombre_producto}}</h5>
-              <p class="card-text">{{ve.precio_producto}}</p>
-              <p class="card-text">{{ve.stock_producto}}</p>
+            <p class="card-text" style="color: rgb(255, 255, 255);  text-transform: initial;   font-family: 'Montserrat', Helvetica, Arial, sans-serif;  font-size: 18px; font-weight: bold;"> {{ve.marca_producto}}</p>  
+            <h5 class="tituloproducto" style="color: rgb(255, 255, 255); text-align: center; text-transform: uppercase;   font-family: 'Montserrat', Helvetica, Arial, sans-serif; font-size: 25px; font-weight: bold;" class="">{{ve.nombre_producto}}</h5>
               
-              <p class="card-text">{{ve.stock_producto}}</p>
-            <p class="card-text">{{ve.categoria}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-           
+            <p class="card-text" style="color: rgb(255, 255, 255);  text-transform: initial;   font-family: 'Montserrat', Helvetica, Arial, sans-serif;  font-size: 15px; font-weight: bold;">{{ve.descripcion_producto}}</p>
+              
+              <p class="card-text" style="color: rgb(255, 255, 255);  text-transform: initial;   font-family: 'Montserrat', Helvetica, Arial, sans-serif;  font-size: 18px; font-weight: bold;">Internet: {{ve.precio_producto}}$clp</p>
+          
+          <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#MasDetalles">
+              Mas detalles
+            </button> -->
+            <!-- INICIO MAS INFORMACION -->
+<!-- 
+<div class="modal fade" id="MasDetalles" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="card-text" style="color: rgb(255, 255, 255);  text-transform: initial; margin-left: 20px; margin-top: 10px;  font-family: 'Montserrat', Helvetica, Arial, sans-serif;  font-size: 12px; font-weight: bold;">{{ve.categoria}}</p>
+       
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="card-text" style="color: rgb(255, 255, 255);  text-transform: initial;   font-family: 'Montserrat', Helvetica, Arial, sans-serif;  font-size: 18px; font-weight: bold;"> {{ve.marca_producto}}</p>  
+        <h5 class="tituloproducto" style="color: rgb(255, 255, 255); text-align: center; text-transform: uppercase;   font-family: 'Montserrat', Helvetica, Arial, sans-serif; font-size: 25px; font-weight: bold;" class="">{{ve.nombre_producto}}</h5>
+          
+        <p class="card-text" style="color: rgb(255, 255, 255);  text-transform: initial;   font-family: 'Montserrat', Helvetica, Arial, sans-serif;  font-size: 15px; font-weight: bold;">{{ve.descripcion_producto}}</p>
+          
+          <p class="card-text" style="color: rgb(255, 255, 255);  text-transform: initial;   font-family: 'Montserrat', Helvetica, Arial, sans-serif;  font-size: 18px; font-weight: bold;">Internet: {{ve.precio_producto}}$clp</p>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- TERMINO MAS INFORMACION -->
           </div>
-        </div>
+        </div></div>
+      
       {% endfor %}
 </div>
-  </div>
-    
 </div>
+ 
+</div>
+
+
 
 <!-- TERMINO CATEGORIAS DESTACADAS -->
 
+
+
+
 <!-- INICIO FOOTER -->
 
-<div class="container">
 
-<div class="row footercontainer">
-    <footer class="py-5 my-5 border-top  previuvfooter">
-     
+  
+     <div class="container-fluid footercontainer">
+  <footer class="py-5 my-5 border-top  previuvfooter">
      <div class="row">
       <ul class="nav justify-content-center">
         <li class="nav-item">
@@ -305,7 +228,7 @@
   </div>
   
   <div class="row">
-    <div class="col text-center consultcolor3">Centro de servicio al cliente</div>
+    <div class="col text-center consultcolor2">Centro de servicio al cliente</div>
   </div>
   <br>
   <div class="row">
@@ -320,23 +243,21 @@
   <br>
 
   <div class="row">
-    <div class="logoinfooter">
-        <div class="">
-            <a href="{%url 'home' %}"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="90" height="72" ></a>
-           <span class="bagde fw-bold fs-2">PETSHOP</span>
-        </div>
+    <div class="logotittlenavbardestacados " style="margin-left: 40% ;">
+      <a href="{%url 'home' %}"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="90" height="72" > </a>
+      <span class=" fw-bold fs-2 logotittle text-decoration-none">PETSHOP</span>
     </div>
     
   </div>
   
-    </footer>
-    <br><br>
-  <p class="text-muted text-center">PetShop © 2022</p>
-  </div>
-     
+   <br>
+ 
+    <p class="text-muted text-center">PetShop © 2022</p>
+  </div> 
+ </footer>  
   <!-- TERMINO FOOTER -->
 
-</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>

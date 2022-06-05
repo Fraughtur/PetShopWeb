@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto
-from core.forms import ProductoForm
+from core.forms import ProductoForm, CustomUserCreationForm
 
 # Create your views here.
 
@@ -71,3 +71,11 @@ def eliminarproducto(request, id):
     productos.delete()
     return redirect(to="listarproductos")
 
+
+def registro(request):
+
+    data = {
+        'form': CustomUserCreationForm()
+    }
+
+    return render(request,'core/Registro.html',data) 
