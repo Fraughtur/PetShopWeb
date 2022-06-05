@@ -1,6 +1,26 @@
 {% extends 'core/base.html' %}
 
-{% load static %}
+{% block js %}
+
+<script>
+  function eliminarProductos(id){
+    Swal.fire({
+      "title":"¿Estas seguro?",
+      "text":"La accion realizada no se podra deshacer",
+      "icon":"question",
+      "ShowCancelButton":true,
+      "cancelButtonText":"No,cancelar",
+      "confirmButtonText":"Si, Eliminar"
+    })
+    .then(function(result){
+      if(result.isConfirmed){
+        window.location.href="/eliminarproductos/"+id+"/"
+      }
+    })
+  }
+</script>
+{% endblock %}
+
 
   {% block contenido %}
 {% load humanize %}
@@ -15,7 +35,7 @@
   <th style="color: white;">Imagen</th>
   <th style="color: white;">Categoria</th>
 </tr>
-  {% for ve in productos %}
+  {% for ve in entity %}
 
   <tr>
     <th style="color: white;">{{ve.nombre_producto}}</th>
@@ -30,8 +50,8 @@
      <th style="color: white;">{{ve.categoria}}</th>
 
   <th style="color: white;">
-    <a href="{% url 'modificarproductos' ve.nombre_producto %}" class="btn btn-success">Modificar</a>
-     <a href="{% url 'eliminarproductos' ve.nombre_producto %}" class="btn btn-danger ">Eliminar</a>
+    <a href="{% url 'modificarproductos' ve.nombre_producto %}" class="btn btn-success">Modificar</a> |
+     <a href="#" onclick="eliminarProductos({{ve.nombre_producto}})" class="btn btn-danger ">Eliminar</a>
         </th>
    
       </tr>   
@@ -39,8 +59,10 @@
 
 </table>
  </div>              
-      
-
+    
+<div>
+  {% include 'core/paginator.html' %}
+</div>
   
 
 

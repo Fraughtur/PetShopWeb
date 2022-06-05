@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, category,profile,registroproductos,modificarproductos,listarproductos,eliminarproductos,registro 
+from .views import home, category,profile,registroproductos,modificarproductos,listarproductos,eliminarproductos,registro
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -12,7 +12,8 @@ urlpatterns = [
       path('Modificar/<id>/',modificarproductos,name="modificarproductos"),
       path('Listar/',listarproductos,name="listarproductos"),
       path('Eliminar/<id>/',eliminarproductos,name="eliminarproductos"),
-      path('Registro/',registro,name="registro"),
+      path('registro/',registro,name="registro"),
+
      
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
