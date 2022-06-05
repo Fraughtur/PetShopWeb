@@ -22,10 +22,12 @@
 
 
 /* DISEÑO DE NAVBAR */
-.navbar{
-    background-color: rgb(73, 197, 255);
 
+.navbar{
+    background-color: rgb(58, 10, 80);
 }
+
+
 .categoryinnavbar{
     padding: 10px 20px;
     display:grid;
@@ -158,6 +160,9 @@ color: red;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
 }
+
+
+
 /* TERMINO CATEGORIAS DESTACADAS */
 
 /* INICIO FOOTER  */

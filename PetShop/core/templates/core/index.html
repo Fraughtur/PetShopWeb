@@ -159,7 +159,7 @@
             <a href="{%url 'category' %}" class="categorydiv rounded-3 text-decoration-none">Identificaciones</a>
             <a href="{%url 'category' %}" class="categorydiv rounded-3 text-decoration-none">Otros</a>
              
-           {% comment %} <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#Contactanos">Contactanos</button> {% endcomment %}  
+   <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#Contactanos">Contactanos</button>
           <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#Register">Registrate</button>
           <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#IniciarSesion">Iniciar Sesion</button>
           <button class="categorydivextra rounded-3 " type="button" data-bs-toggle="modal" data-bs-target="#Ayuda">Ayuda</button>
@@ -236,13 +236,32 @@
         <hr>
         </h2>
     </div>
-    <div class="row" id="categorias">
-        
-    </div>
-    <br>
-    <div class="row" id="categorias2">
-        
-    </div>
+    <div class="row">
+      <div class="col">
+      {% for ve in productos %}
+      <div class="card " style="width: 18rem";>
+       
+        {% if ve.imagen_producto %}
+        <div class="imgproducto" >
+        <img src="{{ ve.imagen_producto.url }}" width="100%" style="padding:20px"  >
+        </div>
+         {% endif %}
+       
+          <div class="card-body">
+            <h5 class="tituloproducto" style="color: rgb(73, 8, 133); text-align: center;" class="fw-bold">{{ve.nombre_producto}}</h5>
+              <p class="card-text">{{ve.precio_producto}}</p>
+              <p class="card-text">{{ve.stock_producto}}</p>
+              
+              <p class="card-text">{{ve.stock_producto}}</p>
+            <p class="card-text">{{ve.categoria}}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+           
+          </div>
+        </div>
+      {% endfor %}
+</div>
+  </div>
+    
 </div>
 
 <!-- TERMINO CATEGORIAS DESTACADAS -->
