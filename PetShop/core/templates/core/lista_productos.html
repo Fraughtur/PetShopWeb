@@ -50,8 +50,8 @@
      <th style="color: white;">{{ve.categoria}}</th>
 
   <th style="color: white;">
-    <a href="{% url 'modificarproductos' ve.nombre_producto %}" class="btn btn-success">Modificar</a> |
-     <!-- <a href="#" onclick="eliminarProductos({{ve.nombre_producto}})" class="btn btn-danger ">Eliminar</a> -->
+    <a href="{% url 'modificarproductos' ve.nombre_producto %}" class="btn btn-success">Modificar Producto</a> |
+     <a href="{% url 'eliminarproductos' ve.nombre_producto %}"  class="btn btn-danger ">Eliminar Producto</a>
         </th>
    
       </tr>   

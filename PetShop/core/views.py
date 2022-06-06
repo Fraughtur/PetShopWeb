@@ -21,10 +21,18 @@ def category(request):
 
     productos = Producto.objects.all()
 
-    datosproducto={
-        'productos': productos
-    }
+    page=request.GET.get('page',1)
 
+    try:
+        paginator = Paginator(productos, 6)
+        productos= paginator.page(page)
+    except:
+        raise Http404
+
+    datosproducto = {
+        'entity': productos ,
+        'paginator': paginator
+    }
     return render(request, 'core/categorias.html',datosproducto)
 
 

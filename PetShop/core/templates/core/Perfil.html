@@ -5,6 +5,7 @@
   {% block contenido %}
 
 
+  <link rel="stylesheet" href="{% static 'core/css/Perfil.css'%}">
 
   <div class="container" style="background-color: rgb(119,30,87)" >
     <div class="row" style="margin-top: 100px;">
@@ -12,26 +13,42 @@
        <h2 style="color: white;">Perfil Usuario</h2>
       <h5 style="color: white;">Hola {{user.username | capfirst}}</h5> 
       </div>
-     
+     <div class="col">
+      <div class="logotittlenavbar" style="padding-top: 50px;">
+        <a href="{%url 'home' %}"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark"  alt="" width="90" height="72" > </a>
+        <span class=" fw-bold fs-2 logotittle text-decoration-none">PETSHOP</span>
+      </div>
+     </div>
     </div> 
    
     <div class="row">
       <div class="col">
      
-      <h2  style="color: white; padding-top: 60px;">Categorias</h2>
+      <h1  style="color: white; padding-top: 60px;">Categorias</h1>
     </div>
     <div class="col">
       <h2 style="color:white; padding-top: 60px;">Informacion del Usuario</h2>
     </div>
   </div>
+  <br>
   <div class="row">
     <div class="col-3 d-block">
-      <div><a href="">Historial de Compras</a></div>
-      <div><a href="">Estado del Pedido</a></div>
-      <div><a href="">Donaciones</a></div>
-      <div><a href="">Modificar Perfil</a></div>
+      <h4><a class="categorydiv2 rounded-3 fw-bold text-decoration-none" href="{%url 'listarproductos' %}">Productos</a></h4><br>
+      <!-- <h4><a class="categorydiv2 rounded-3 fw-bold text-decoration-none" href="">Historial de Compras</a></h4><br> -->
+      <!-- <h4><a class="categorydiv2 rounded-3 fw-bold text-decoration-none" href="">Estado del Pedido</a></h4><br> -->
+      <h4><a class="categorydiv2 rounded-3 fw-bold text-decoration-none" href="">Lista de donadores</a></h4><br>
+      <!-- <h4><a class="categorydiv2 rounded-3 fw-bold text-decoration-none" href="">Donaciones</a></h4><br> -->
+      <h4><a class="categorydiv2 rounded-3 fw-bold text-decoration-none" href="">Modificar Perfil</a></h4><br>
+      <h4><a class="categorydiv2 rounded-3 fw-bold text-decoration-none" href="">Registro Ventas</a></h4><br>
     </div>
+      <div class="col-9">
+    <h4 style="color: white; padding-left: 325px;">Usuario: {{user.username | capfirst}}</h4>
+    <h6 style="color: white; padding-left: 325px;">Correo electrónico: {{user.email | capfirst}}</h6>
+    <h6 style="color: white; padding-left: 325px;">Nombre completo: {{user.first_name}} {{user.last_name}}</h6>
+   
   </div>
+  </div>
+
   </div>
       
 

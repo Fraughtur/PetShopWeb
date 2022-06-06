@@ -30,6 +30,16 @@ body{
   border: solid;
 }
 
+.categorydiv2{
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+  border: solid;
+}
+
+
 .categorydivextra{
     margin-left: 300px;
   
@@ -59,9 +69,12 @@ background-color: white;
     background-color: rgb(255, 255, 255);
     }
 
-  
-
-
+.categorydiv2:hover{
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        }
+      
 .categorydivextra:hover{
     cursor: pointer;
     color: rgb(0, 0, 0);
