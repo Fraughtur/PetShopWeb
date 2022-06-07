@@ -24,7 +24,14 @@
 
   {% block contenido %}
 {% load humanize %}
+
 <div class="container">
+  <div class="row">
+    <div class="col">
+      <br>
+      <a href="{% url 'registroproductos' %}" class="btn btn-success">Añadir Producto</a> |
+    </div>
+  </div>
 <table class="table table-striped table-hover table-responsive-sm">
 <tr>
   <th style="color: white;">Nombre/ID </th>
