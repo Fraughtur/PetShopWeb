@@ -14,6 +14,7 @@
       
          <div class="col">
              <h1>Agregar Producto</h1>
+             <a href="{% url 'listarproductos' %}" class="btn btn-success">Volver</a> 
     <br>
          </div>
      </div>
@@ -24,13 +25,11 @@
         <div class="form-group" style="color: white ; ">
             {{ form | crispy }}
         </div>
- 
+        <br>
         <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
         <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+        <br>
        
-        <div class="alert alert-success" role="alert">
-            {{mensajeproducto}}
-        </div>
 </form>
   
          </div>
