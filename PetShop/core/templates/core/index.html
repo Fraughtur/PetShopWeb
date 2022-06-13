@@ -8,7 +8,7 @@
   
   <!-- INICIO CAROUSEL -->
 <div class="container">
-  <div class="col-12 ">
+  <div class="col-xl-12 col-md-10 col-12">
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -75,13 +75,12 @@
     {% for ve in productos %} 
    
       
-        <div class="col-3  border border-5" style=" margin-left: 75px; margin-top: 30px; background-color: rgb(119,30,87);";>
+        <div class="col-xl-3 col-md-4 col-8  border border-5" style=" margin-left: 75px; margin-top: 30px; background-color: rgb(119,30,87);";>
           <h5 class="card-text" style="color: rgb(255, 255, 255);  text-transform: initial; margin-left: 20px; margin-top: 10px;  font-family: 'Montserrat', Helvetica, Arial, sans-serif;  font-size: 12px; font-weight: bold;">{{ve.categoria}}</h5>
         {% if ve.imagen_producto %}
-        
-        <div class="imgproducto" >
-        <img src="{{ ve.imagen_producto.url }}" width="250px" height="250px" style="padding-left:0px; padding-right:25px; padding-bottom:25px; margin-left: 25px; "  >
-        </div>
+    
+        <img src="{{ ve.imagen_producto.url }}" width="80%" height="50%" style="padding-left:0px; padding-right:25px; padding-bottom:25px; margin-left: 25px; "  >
+       
          {% endif %}
        
         
