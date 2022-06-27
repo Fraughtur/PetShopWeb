@@ -15,6 +15,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+
 
 </head>
 <body>
@@ -22,48 +27,89 @@
 
 <!-- INICIO NAVBAR-->
 
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+  <div class="container px-2 px-lg-2">
+    
+    <a href="core:home"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="90" height="72" > </a>
+    <span class=" fw-bold fs-2 logotittle text-decoration-none">PETSHOP</span>
 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/"></span>
+                      Inicio
+                  </a>
+              </li>
 
-      <nav class="navbar sticky-top navbar-expand-lg ">
-        <div class="container-fluid">
-          <div class="logotittlenavbar">
-          <a href="{%url 'home' %}"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="90" height="72" > </a>
-          <span class=" fw-bold fs-2 logotittle text-decoration-none">PETSHOP</span>
-        </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbariconCollapse" aria-controls="NavbariconCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="NavbariconCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0  ">
+              <!-- Menú desplegable -->
+              <div class="dropdown show">
+                  <a class="nav-link dropdown-toggle text-dark" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Categorias
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      {% for categoria in categoria %}
+                      <a class="dropdown-item" href="{% url 'core:productocategoria' categoria.id %}">{{categoria.nombre_categoria}}</a> {% endfor %}
+                  </div>
+              </div>
+
+              {% if user.is_staff %}
               <li class="nav-item">
-                <a href="{%url 'category' %}" class="categorydiv rounded-3 fw-bold text-decoration-none">Collares </a>
+                  <a class="nav-link active" aria-current="page" href="{% url 'core:listarproductos' %}">
+                          Listado Productos
+                      </a>
               </li>
+
               <li class="nav-item">
-                <a href="{%url 'category' %}" class="categorydiv rounded-3 fw-bold text-decoration-none">Bandanas </a>
+                  <a class="nav-link active" aria-current="page" href="/categorias">
+                          Listado Pedidos
+                      </a>
               </li>
-              <li class="nav-item">
-                <a href="{%url 'category' %}" class="categorydiv rounded-3 fw-bold text-decoration-none">Identificaciones</a>
-              </li>
+
+              {% endif %}
+
+          </ul>
+
+          <ul class="navbar-nav d-flex ml-auto mb-2 mb-lg-0 ms-lg-4">
               {% if user.is_authenticated %}
+              <!-- Si está autenticado mostrar -->
+              {% load humanize %}
+             
               <li class="nav-item">
-                <a href="{%url 'logout' %}" class="categorydivextra rounded-3 fw-bold text-decoration-none">Cerrar Sesion</a>
-              </li>
-              <li class="nav-item" style="">
-                <a class="text-decoration-none " style="font-size: 18px; color: white;" href="{%url 'profile' %}">Bienvenid@ {{user.username | capfirst}}</a>
-              </li>
-           {% else %}
+                <a class="nav-link active" aria-current="page" href="#">
+                   Seguimiento de Producto
+                </a>
+
+            </li>
               <li class="nav-item">
-                <a href="{%url 'registro' %}" class="categorydivextra rounded-3 fw-bold text-decoration-none">Registrate</a>
-                
+                  <a class="nav-link active" aria-current="page" href="#">
+                      <b>{{ user.username }}</b>
+                  </a>
               </li>
               <li class="nav-item">
-                <a href="{%url 'login' %}" class="categorydivextra rounded-3 fw-bold text-decoration-none">Inicia Sesion</a>
+                  <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">
+                              Cerrar Sesión
+                      </a>
+              </li>
+              {% else %}
+              <!-- Si no está autenticado mostrar -->
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'core:login' %}">
+                      Ingresar
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'core:registro' %}">
+                      Registrar
+                  </a>
               </li>
               {% endif %}
-            </ul>
-          </div>
-        </div>
-      </nav>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+ 
       
   <!-- TERMINO NAVBAR -->
 
@@ -80,9 +126,10 @@
 <!-- INICIO FOOTER -->
 
 
-  
-     <div class="container-fluid footercontainer">
-  <footer class="py-5 my-5 border-top  previuvfooter">
+   <footer class="py-5 my-5 border-top  previuvfooter">
+   <div class="container-fluid footercontainer">
+
+      
      <div class="row">
       <ul class="nav justify-content-center">
         <li class="nav-item">
@@ -131,8 +178,8 @@
   <br>
 
   <div class="row">
-    <div class="logotittlenavbardestacados " style="margin-left: 40% ;">
-      <a href="{%url 'home' %}"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="90" height="72" > </a>
+    <div class="logotittlenavbardestacados ">
+      <a href="{%url 'core:home' %}"><img src="{% static 'core/img/1.jpg'%}" class="border border-2 border-dark" alt="" width="90" height="72"  style="margin-left: 40%;" > </a>
       <span class=" fw-bold fs-2 logotittle text-decoration-none">PETSHOP</span>
     </div>
     
@@ -141,15 +188,11 @@
    <br>
  
     <p class="text-muted text-center">PetShop © 2022</p>
-  </div> 
- </footer>  
+ </div> 
+ </footer> 
+  
   <!-- TERMINO FOOTER -->
 
-  
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 {% if messages %}
 {% for m in messages %}

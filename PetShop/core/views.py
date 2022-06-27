@@ -4,18 +4,34 @@ from .models import Producto
 from core.forms import ProductoForm, CustomUserCreationForm
 from django.core.paginator import Paginator
 from django.http import Http404
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout, login, authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db.models import Q
+from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
 def home(request):
     
     productos = Producto.objects.all()
-    datosproducto={
+    data={
         'productos': productos
     }
 
-    return render(request, 'core/index.html',datosproducto)
+    return render(request, 'core/index.html',data)
+
+def productoxCategoria(request, id):
+    busqueda = request.POST.get("buscador")
+    lista_productos = Producto.objects.filter(categoria = id)
+    
+    if busqueda:
+        lista_productos = Producto.objects.filter(
+            Q(nombre__icontains=busqueda) |
+            Q(descripcion__icontains=busqueda)
+        ).distinct()
+
+    data = {'entity': lista_productos}
+    return render(request, 'core/index.html', data)
 
 def category(request):
 
@@ -86,7 +102,7 @@ def modificarproductos(request, id):
         if formulariomodificarproducto.is_valid():
             formulariomodificarproducto.save()
             messages.success(request,"modificado correctamente")
-            return redirect(to="listarproductos")
+            return redirect(to="core:listarproductos")
             data["form"] = formulariomodificarproducto
 
     return render(request,'core/ModificarProductos.html',data)
@@ -96,7 +112,7 @@ def eliminarproductos(request,id):
     producto = get_object_or_404(Producto, nombre_producto=id)
     producto.delete()
     messages.success(request,"eliminado correctamente")
-    return redirect(to="listarproductos")
+    return redirect(to="core:listarproductos")
 
 def registro(request):
 
@@ -111,7 +127,10 @@ def registro(request):
             user= authenticate(username=formulario.cleaned_data["username"],password=formulario.cleaned_data["password1"])
             login(request, user)
             messages.success(request,"Te has registrado Correctamente")
-            return redirect(to="home")
+            return redirect(to="core:home")
+        else:
             data["form"] = formulario
 
     return render(request,'registration/registro.html',data)
+
+    

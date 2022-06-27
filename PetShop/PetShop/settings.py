@@ -73,6 +73,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'core.context_processors.extras',
+                'core.context_processors.importe_total_carro',
+               
             ],
         },
     },
@@ -90,6 +93,34 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+#ORACLE DATABASE COMENTADA
+
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.oracle',
+#        'NAME': '127.0.0.1:1521/orcl',
+#        'USER': 'django',
+#        'PASSWORD': 'django',
+#        'TEST': {
+#            'USER': 'default_test',
+#            'TBLSPACE': 'default_test_tbls',
+#            'TBLSPACE_TMP': 'default_test_tbls_tmp',
+#        },
+#    },
+#    'other': {
+#        'ENGINE': 'django.db.backends.oracle',
+#        'NAME': '127.0.0.1:1521/orcl',
+#        'USER': 'django',
+#        'PASSWORD': 'django',
+#        'TEST': {
+#            'USER': 'other_test',
+#            'TBLSPACE': 'other_test_tbls',
+#            'TBLSPACE_TMP': 'other_test_tbls_tmp',
+#        },
+#    },
+# }
 
 
 # Password validation

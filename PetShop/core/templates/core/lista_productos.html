@@ -29,7 +29,7 @@
   <div class="row">
     <div class="col-xl-12 col-md-6 col-2">
       <br>
-      <a href="{% url 'registroproductos' %}" class="btn btn-success">Añadir Producto</a> |
+      <a href="{% url 'core:registroproductos' %}" class="btn btn-success">Añadir Producto</a> |
     </div>
   </div>
   <div class="col-xl-12 col-md-6 col-12">
@@ -58,8 +58,8 @@
      <th style="color: white;">{{ve.categoria}}</th>
 
   <th style="color: white;">
-    <a href="{% url 'modificarproductos' ve.nombre_producto %}" class="btn btn-success">Modificar Producto</a> |
-     <a href="{% url 'eliminarproductos' ve.nombre_producto %}"  class="btn btn-danger ">Eliminar Producto</a>
+    <a href="{% url 'core:modificarproductos' ve.nombre_producto %}" class="btn btn-success">Modificar Producto</a> |
+     <a href="{% url 'core:eliminarproductos' ve.nombre_producto %}"  class="btn btn-danger ">Eliminar Producto</a>
         </th>
    
       </tr>   
