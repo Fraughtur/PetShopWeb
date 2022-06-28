@@ -74,7 +74,13 @@
               {% if user.is_authenticated %}
               <!-- Si está autenticado mostrar -->
               {% load humanize %}
-             
+
+              <div class="d-flex">
+                <a href="{% url 'core:viewcart' %}" class="btn btn-outline-dark">
+                    <i class="bi-cart-fill me-1"></i>
+                    <span class="badge  text-white  rounded-pill">clp. {{ importe_total_carro | intcomma }}</span>
+                </a>
+            </div>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">
                    Seguimiento de Producto

@@ -1,6 +1,7 @@
 from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto
+from .carro import Carro
 from core.forms import ProductoForm, CustomUserCreationForm
 from django.core.paginator import Paginator
 from django.http import Http404
@@ -133,4 +134,46 @@ def registro(request):
 
     return render(request,'registration/registro.html',data)
 
-    
+
+def viewcart(request):
+        return render(request, 'carrito/cart.html')
+
+def agregar_producto(request,  ):
+    carro=Carro(request)
+    producto=Producto.objects.get(nombre_producto=id)
+    carro.agregar(producto=producto)
+    return redirect(to="home:viewcart")
+
+def eliminar_producto(request, producto_id):
+    carro=Carro(request)
+    producto=Producto.objects.get(id=producto_id)
+    carro.eliminar(producto=producto)
+    return redirect(to="/viewcart")
+
+
+def restar_producto(request, producto_id):
+    carro = Carro(request)
+    producto = Producto.objects.get(id=producto_id)
+    carro.restar(producto=producto)
+    return redirect(to="/viewcart")
+
+def cleancart(request):
+    carro=Carro(request)
+    carro.limpiar_carro()
+    return redirect(to="/viewcart")
+
+
+def procesar_compra(request):
+    messages.success(request, 'Gracias por su Compra!!')
+    carro = Carro(request)
+    carro.limpiar_carro()
+    return redirect('core:home')
+
+def detalleProducto(request, id):
+    product = get_object_or_404(Producto, nombre_producto=id)
+    otrosProductos = Producto.objects.filter(categoria=product.categoria)
+    data = {
+        'producto': product,
+        'productosRelacionados': otrosProductos
+    }
+    return render(request, 'core/detalle.html', data)
