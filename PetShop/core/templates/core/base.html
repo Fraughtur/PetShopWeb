@@ -37,31 +37,31 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/"></span>
+                  <a class="nav-link active" aria-current="page" href="/"  style="color:white ;"></span>
                       Inicio
                   </a>
               </li>
 
               <!-- Menú desplegable -->
-              <div class="dropdown show">
-                  <a class="nav-link dropdown-toggle text-dark" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="dropdown show" >
+                  <a  class="nav-link dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="color:white ;" >
                       Categorias
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      {% for categoria in categoria %}
-                      <a class="dropdown-item" href="{% url 'core:productocategoria' categoria.id %}">{{categoria.nombre_categoria}}</a> {% endfor %}
-                  </div>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
+                    {% for categoria in categoria %}
+                    <a class="dropdown-item" href="{% url 'core:productocategoria' categoria.id %}"  style="color:white ;">{{categoria.nombre}}</a> {% endfor %}
+                </div>
               </div>
 
               {% if user.is_staff %}
               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{% url 'core:listarproductos' %}">
+                  <a class="nav-link active" aria-current="page" href="{% url 'core:listarproductos' %}"  style="color:white ;">
                           Listado Productos
                       </a>
               </li>
 
               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/categorias">
+                  <a class="nav-link active" aria-current="page" href="/categorias"  style="color:white ;">
                           Listado Pedidos
                       </a>
               </li>
@@ -76,36 +76,36 @@
               {% load humanize %}
 
               <div class="d-flex">
-                <a href="{% url 'core:viewcart' %}" class="btn btn-outline-dark">
+                <a href="{% url 'core:viewcart' %}" class="btn btn-outline-dark" >
                     <i class="bi-cart-fill me-1"></i>
                     <span class="badge  text-white  rounded-pill">clp. {{ importe_total_carro | intcomma }}</span>
                 </a>
             </div>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <a class="nav-link active" aria-current="page" href="#"  style="color:white ;">
                    Seguimiento de Producto
                 </a>
 
             </li>
               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">
+                  <a class="nav-link active" aria-current="page" href="#"  style="color:white ;">
                       <b>{{ user.username }}</b>
                   </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">
+                  <a class="nav-link active" aria-current="page" href="{% url 'logout' %}"  style="color:white ;">
                               Cerrar Sesión
                       </a>
               </li>
               {% else %}
               <!-- Si no está autenticado mostrar -->
               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{% url 'core:login' %}">
+                  <a class="nav-link active" aria-current="page" href="{% url 'core:login' %}"  style="color:white ;">
                       Ingresar
                   </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{% url 'core:registro' %}">
+                  <a class="nav-link active" aria-current="page" href="{% url 'core:registro' %}"  style="color:white ;">
                       Registrar
                   </a>
               </li>

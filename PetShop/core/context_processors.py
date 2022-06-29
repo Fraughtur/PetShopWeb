@@ -1,7 +1,7 @@
 from .models import Categoria
 
 def extras(request):
-	lista_categorias = Categoria.objects.all().order_by('nombre_categoria')
+	lista_categorias = Categoria.objects.all().order_by('nombre')
 	return {'categorias':lista_categorias}
 
 def importe_total_carro(request):

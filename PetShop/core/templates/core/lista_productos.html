@@ -46,20 +46,20 @@
   {% for ve in entity %}
 
   <tr>
-    <th style="color: white;">{{ve.nombre_producto}}</th>
-    <th style="color: white;">{{ve.marca_producto}}</th>
+    <th style="color: white;">{{ve.nombre}}</th>
+    <th style="color: white;">{{ve.marca}}</th>
     <!-- <td  class="ellipsis" style="color: white; ">{{ve.descripcion_producto}}</td> -->
-    <th style="color: white;">{{ve.precio_producto}}</th>
-    <th style="color: white;">{{ve.stock_producto}}</th>
+    <th style="color: white;">{{ve.precio}}</th>
+    <th style="color: white;">{{ve.stock}}</th>
    
-    <th style="color: white;">{% if ve.imagen_producto %}
-             <img src="{{ ve.imagen_producto.url }}" width="75" height="50">
+    <th style="color: white;">{% if ve.imagen %}
+             <img src="{{ ve.imagen.url }}" width="75" height="50">
               {% endif %}</th>
      <th style="color: white;">{{ve.categoria}}</th>
 
   <th style="color: white;">
-    <a href="{% url 'core:modificarproductos' ve.nombre_producto %}" class="btn btn-success">Modificar Producto</a> |
-     <a href="{% url 'core:eliminarproductos' ve.nombre_producto %}"  class="btn btn-danger ">Eliminar Producto</a>
+    <a href="{% url 'core:modificarproductos' ve.nombre %}" class="btn btn-success">Modificar Producto</a> |
+     <a href="{% url 'core:eliminarproductos' ve.nombre %}"  class="btn btn-danger ">Eliminar Producto</a>
         </th>
    
       </tr>   

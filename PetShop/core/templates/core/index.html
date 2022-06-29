@@ -69,43 +69,55 @@
         <hr class="border border-white border-5 ">
       </h2>
     </div>
-{% load humanize %}
-    <div class="row">
-
-    {% for ve in productos %} 
-   
-      
-        <div class="col-xl-3 col-md-4 col-8  border border-5" style=" margin-left: 75px; margin-top: 30px; background-color: rgb(119,30,87);";>
-          <h5 class="card-text" style="color: rgb(255, 255, 255);  text-transform: initial; margin-left: 20px; margin-top: 10px;  font-family: 'Montserrat', Helvetica, Arial, sans-serif;  font-size: 12px; font-weight: bold;">{{ve.categoria}}</h5>
-        {% if ve.imagen_producto %}
-    
-        <img src="{{ ve.imagen_producto.url }}" width="80%" height="50%" style="padding-left:0px; padding-right:25px; padding-bottom:25px; margin-left: 25px; "  >
-       
-         {% endif %}
-       
-        
-            <h5 class="" style="color: rgb(255, 255, 255); "> {{ve.marca_producto | capfirst }}</h5>  
-            <h2 class="" style="color: rgb(255, 255, 255); " class="">{{ve.nombre_producto | title }}</h2>
-                 <h3 class="" style="color: rgb(255, 255, 255); ">Precio: {{ve.precio_producto | intcomma }}$</h3>
-            <!-- <p class="card-text" style="color: rgb(255, 255, 255);  text-transform: initial;   font-family: 'Montserrat', Helvetica, Arial, sans-serif;  font-size: 15px; font-weight: bold;">{{ve.descripcion_producto}}</p> -->
-              
-           
-          
-            <div class="card-footer p-2 pt-2 border-top-0 bg-transparent">
-              <div class="text-center">
-                  <a class="btn btn-dark mt-auto" href="{% url 'core:detalleproducto' ve.nombre_producto %}">Ver detalle</a> 
-                  {% if user.is_authenticated%}
-                  <a href="{% url 'core:addcart' ve.nombre_producto %}" class="btn btn-danger mt-2" type="button">
-                      <i class="bi-cart-fill me-1"></i> Agregar al Carrito
-                  </a>
-                  {% endif %}
+    <div class="pt-3">
+      <form class="d-flex d-md-inlne-block form-inline justify-content-end" method="POST" action="">
+          {% csrf_token %}
+          <div class="input-group">
+              <input type="text" class="form-control bg-light border-1 small text-center" name="buscador" placeholder="buscar..." value="{{ request.POST.buscador }}">
+              <div class="input-group-append">
+                  <button class="btn  mx-1" type="submit" style="background-color: rgb(119,30,87) ; color: white;"> 
+           <img src="{% static 'core/img/lupa.png'%}" width="30px">
+          </button>
               </div>
           </div>
-          
+      </form>
+  </div>
+  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    {% if entity %} {% for producto in entity %} {% load humanize %}
+    <div class="col my-3">
+        <div class="card h-100 text-center py-3">
+            <!-- Product image-->
+            {% if producto.imagen %}
+            <img class="mx-auto d-block img-fluid" src="{{ producto.imagen.url }}" alt="producto" width="90px%" /> {% else %}
+            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="sinImagen" /> {% endif %}
+            <!-- Product details-->
+     
+            <div class="card-body p-3">
+                <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="fw-bolder">{{ producto.nombre }}</h5>
+                    <!-- Product price-->
+                    clp. {{ producto.precio | intcomma }}
+                </div>
+            </div>
+            <!-- Product actions-->
+            <div class="card-footer p-2 pt-2 border-top-0 bg-transparent">
+                <div class="text-center">
+                    <a class="btn btn-dark mt-auto" href="{% url 'core:detalleproducto' producto.id %}">Ver detalle</a> 
+                    {% if user.is_authenticated%}
+                    <a href="{% url 'core:addcart' producto.id %}" class="btn  mt-2" type="button" style="background-color: rgb(119,30,87) ; color: white;">
+                        <i class="bi-cart-fill me-1"></i> Agregar al Carrito
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
         </div>
-      
-      {% endfor %}
-
+    </div>
+    {% endfor %} {% else %}
+    <div class="text-center text-warning">
+        <h3> No se encontraron Productos!!</h3>
+    </div>
+    {% endif %}
 </div>
 
 </div>

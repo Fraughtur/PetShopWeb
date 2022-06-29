@@ -1,6 +1,6 @@
-from django.http import Http404
+from django.http.response import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Producto
+from .models import *
 from .carro import Carro
 from core.forms import ProductoForm, CustomUserCreationForm
 from django.core.paginator import Paginator
@@ -10,16 +10,36 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
+from rest_framework import viewsets
+from .serializers import ProductoSerializer
 # Create your views here.
 
 def home(request):
     
-    productos = Producto.objects.all()
-    data={
-        'productos': productos
-    }
+   
 
+    busqueda = request.POST.get("buscador")
+    product_list = Producto.objects.order_by('nombre')
+    page = request.GET.get('page', 1)
+
+    if busqueda:
+        product_list = Producto.objects.filter(
+            Q(nombre__icontains = busqueda) |
+            Q(descripcion__icontains = busqueda)
+        ).distinct()
+    
+    try:
+        paginator = Paginator(product_list, 12)
+        product_list = paginator.page(page)
+    except:
+        raise Http404
+
+    data = {'entity': product_list,
+            'paginator': paginator
+    }
+    
     return render(request, 'core/index.html',data)
+
 
 def productoxCategoria(request, id):
     busqueda = request.POST.get("buscador")
@@ -34,23 +54,14 @@ def productoxCategoria(request, id):
     data = {'entity': lista_productos}
     return render(request, 'core/index.html', data)
 
-def category(request):
-
-    productos = Producto.objects.all()
-
-    page=request.GET.get('page',1)
-
-    try:
-        paginator = Paginator(productos, 6)
-        productos= paginator.page(page)
-    except:
-        raise Http404
-
-    datosproducto = {
-        'entity': productos ,
-        'paginator': paginator
+def detalleProducto(request, id):
+    product = get_object_or_404(Producto, id=id)
+    otrosProductos = Producto.objects.filter(categoria=product.categoria)
+    data = {
+        'producto': product,
+          'productosRelacionados': otrosProductos
     }
-    return render(request, 'core/categorias.html',datosproducto)
+    return render(request, 'producto/detalle.html', data)
 
 
 def profile(request):
@@ -92,7 +103,7 @@ def registroproductos(request):
 
 def modificarproductos(request, id):
 
-    producto =get_object_or_404(Producto, nombre_producto=id)
+    producto =get_object_or_404(Producto, nombre=id)
 
     data ={
         'form': ProductoForm(instance=producto)
@@ -136,13 +147,13 @@ def registro(request):
 
 
 def viewcart(request):
-        return render(request, 'carrito/cart.html')
+        return render(request, 'carrito/cart.html', {'carro': request.session['carro']})
 
-def agregar_producto(request,  ):
+def agregar_producto(request,producto_id ):
     carro=Carro(request)
-    producto=Producto.objects.get(nombre_producto=id)
+    producto=Producto.objects.get(id=producto_id)
     carro.agregar(producto=producto)
-    return redirect(to="home:viewcart")
+    return redirect(to="/viewcart")
 
 def eliminar_producto(request, producto_id):
     carro=Carro(request)
@@ -169,11 +180,8 @@ def procesar_compra(request):
     carro.limpiar_carro()
     return redirect('core:home')
 
-def detalleProducto(request, id):
-    product = get_object_or_404(Producto, nombre_producto=id)
-    otrosProductos = Producto.objects.filter(categoria=product.categoria)
-    data = {
-        'producto': product,
-        'productosRelacionados': otrosProductos
-    }
-    return render(request, 'core/detalle.html', data)
+
+
+class ProductoViewset(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
