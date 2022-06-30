@@ -32,6 +32,12 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 
+
+# Facebook
+SOCIAL_AUTH_FACEBOOK_KEY = "567298498184555"
+SOCIAL_AUTH_FACEBOOK_SECRET = "943879daa50329ae38d369fcadbc0dae"
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,6 +51,7 @@ INSTALLED_APPS = [
     'core',
     'django.contrib.humanize',
     'crispy_forms',
+    'social_django',
 ]
 
 CRISPY_TEMPLATE_PACK ='bootstrap4'
@@ -171,3 +178,10 @@ STATICFILES_DIRS  = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' 
+
+# Este backend es el que se asegura de autenticar al usuario y 
+# guardarlo en la tabla este backend se encarga de esto 
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]

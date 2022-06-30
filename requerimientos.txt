@@ -1,0 +1,4 @@
+pillow
+django-admin-interface
+django-rest-framework
+social-auth-app-django

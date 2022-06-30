@@ -23,6 +23,8 @@
                     <a href="{% url 'core:home' %}">Volver al Menu Principal</a> |
                     <a href="{% url 'core:registro' %}">Registrarse</a>
                     <input type="submit" class="btn btn-success float-right" value="ingresar">
+                    <a href="{% url 'social:begin' 'facebook' %}">Continuar con Facebook</a>
+                    <!-- Boton de google -->
                     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
                     <script>
                         function onSignIn(googleUser) {
