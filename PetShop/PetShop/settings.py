@@ -37,6 +37,11 @@ LOGIN_REDIRECT_URL = '/'
 SOCIAL_AUTH_FACEBOOK_KEY = "567298498184555"
 SOCIAL_AUTH_FACEBOOK_SECRET = "943879daa50329ae38d369fcadbc0dae"
 
+# posible uso de facebook
+THIRD_APPS = [
+    'rest_frameworks.oauthtoken',
+]
+
 
 # Application definition
 
