@@ -57,6 +57,10 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'crispy_forms',
     'social_django',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 CRISPY_TEMPLATE_PACK ='bootstrap4'
@@ -183,6 +187,9 @@ STATICFILES_DIRS  = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' 
+
+
+SITE_ID = 1
 
 # Este backend es el que se asegura de autenticar al usuario y 
 # guardarlo en la tabla este backend se encarga de esto 
