@@ -2,6 +2,6 @@ pillow
 django-admin-interface
 django-rest-framework
 social-auth-app-django
-
+django-allauth
 
 acabo de sacar 'django.contrib.sites', de settings

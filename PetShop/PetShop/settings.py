@@ -191,9 +191,21 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 SITE_ID = 1
 
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
+
 # Este backend es el que se asegura de autenticar al usuario y 
 # guardarlo en la tabla este backend se encarga de esto 
 AUTHENTICATION_BACKENDS = [
-    'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
